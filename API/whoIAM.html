@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHO I AM</title>
+</head>
+<body>
+    <h3 id="name"></h3>
+
+    <script>
+        function doGetName() {
+            fetch('https://randomuser.me/api/?results=5000/')
+            .then(response => response.json())
+            .then(data => {
+                const user = data.results[0];
+                const name = user.name;
+                const fullName = `${name.title} ${name.first} ${name.last}`;
+                document.getElementById("name").innerText = fullName;
+            })
+        }
+
+        doGetName();
+        setInterval(() => {
+            doGetName();
+        }, 1000);
+    </script>
+</body>
+</html>

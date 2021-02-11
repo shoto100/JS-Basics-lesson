@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1 onclick="console.log('hehehe')">Exploring Events</h1>
+    <button >option 0</button>
+    <button id="second">option 1</button>
+    <button>option 2</button>
+    <button id="last">option 3</button>
+
+
+    <script>
+        document.getElementById("last").addEventListener("click", function(){
+            document.body.style.backgroundColor = "green";
+        })
+
+        // var secondButton = document.getElementById("second");
+        // // secondButton.onclick = handlebyle;
+        // // secondButton.addEventListener("click", handlebyle)
+
+        // function handlebyle() {
+        //     document.body.style.backgroundColor = "cyan";
+            
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="myList">
+            <li id="first" class="item">satodhru das nondon 1</li>
+            <li class="item">satodhru das nondon 2</li>
+            <li class="item">satodhru das nondon 3</li>
+            <li class="item">satodhru das nondon 4</li>
+            <li class="item">satodhru das nondon 5</li>
+        </ul>
+        <button id="addNew">
+            brand new item
+        </button>
+
+        <script>
+            // var items = document.getElementsByClassName("item");
+            // for (let i = 0; i < items.length; i++) {
+            //     const item = items[i];
+            //     item.addEventListener("click", function(event) {
+            //         event.target.parentNode.removeChild(event.target)
+            //     })
+            // }
+
+            document.getElementById("myList").addEventListener("click", function() {
+                event.target.parentNode.removeChild(event.target);
+            })
+
+            document.getElementById("addNew").addEventListener("click", function(event) {
+                var itemParent = document.getElementById("myList");
+                var newItem = document.createElement("li");
+                newItem.innerText = "brand new item";
+                itemParent.appendChild(newItem);
+            })
+
+
+
+            // ---------- what is bubble event & bubble end ---------
+
+            // document.getElementById("first").addEventListener("click", function() {
+            //     console.log("first item clicked")
+            //     event.stopPropagation();
+            // })
+            // document.getElementById("myList").addEventListener("click", function() {
+            //     console.log("ul item clicked")
+            //     event.stopPropagation();
+            // })
+            // document.getElementById("container").addEventListener("click", function() {
+            //     console.log("container item clicked")
+            //     event.stopPropagation();
+
+            // })
+        </script>
+    </div>
+</body>
+</html>
